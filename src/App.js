@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import mockApartments from './mockDoggyHotels';
+import mockUsers from './mockUsers';
 
 function App() {
   return (
