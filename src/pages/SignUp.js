@@ -5,6 +5,6 @@ const SignUp = () => {
   
   return (
     <h1>Join The Pack!!</h1>
-
-)}
+  )
+}
 export default SignUp;

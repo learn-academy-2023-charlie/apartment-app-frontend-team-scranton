@@ -16,25 +16,26 @@ import SignIn from "./pages/SignIn"
 import SignUp from "./pages/SignUp"
 
 const App = () => {
-  const [currentUser, setCurrentUser] = useState(mockUsers[0])
-  const [doggyHotels, setDoggyHotels] = useState(mockDoggyHotels)
+    const [currentUser, setCurrentUser] = useState(mockUsers[0])
+    const [doggyHotels, setDoggyHotels] = useState(mockDoggyHotels)
 
-  return (
-    <>
-        <Header />
-        <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/signup" element={<SignUp />} />
-            <Route path="/signin" element={<SignIn />} />
-            <Route path="/doggyhotelindex" element={<DoggyHotelIndex doggyHotels={doggyHotels}/>} />
-            <Route path="/doggyhotelshow/:id" element={<DoggyHotelShow doggyHotels={doggyHotels}/>} />
-            <Route path="/doggyhotelnew" element={<DoggyHotelNew />} />
-            <Route path="/doggyhoteledit" element={<DoggyHotelEdit />} />
-            <Route path="*" element={<NotFound />} />
-        </Routes>
-        <Footer />
-    </>
-)}
+    return (
+        <>
+            <Header />
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/signup" element={<SignUp />} />
+                <Route path="/signin" element={<SignIn />} />
+                <Route path="/doggyhotelindex" element={<DoggyHotelIndex doggyHotels={doggyHotels}/>} />
+                <Route path="/doggyhotelshow/:id" element={<DoggyHotelShow doggyHotels={doggyHotels}/>} />
+                <Route path="/doggyhotelnew" element={<DoggyHotelNew />} />
+                <Route path="/doggyhoteledit" element={<DoggyHotelEdit />} />
+                <Route path="*" element={<NotFound />} />
+            </Routes>
+            <Footer />
+        </>
+    )
+}
 export default App;
 
 
