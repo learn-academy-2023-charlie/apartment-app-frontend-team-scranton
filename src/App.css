@@ -1,4 +1,6 @@
-
+* {
+  background-image: src("./assets/bacground2");
+}
 
 .header {
   align-items: center;

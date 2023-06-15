@@ -1,70 +1,250 @@
-# Getting Started with Create React App
+https://github.com/learn-academy-2023-charlie/apartment-app-frontend-team-splendiferous-instructors
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Apartment Index
+ - https://github.com/learn-academy-2023-charlie/syllabus/blob/main/cat-tinder/frontend/cat-read.md
 
-## Available Scripts
+ - send props to component call
 
-In the project directory, you can run:
+ - accept props on component
 
-### `yarn start`
+ - iterate across values in the apartment array to display the image and state for each value on a separate card
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+import React from "react"
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+  const ApartmentIndex = ({ apartments }) => {
+    
+    return (
+      
+      <main>
+        {apartments.map((apartment, index) => {
+          
+          return (
+            <>
+              
+              <CardGroup key={index}>
+                <Card>
+                  
+                  <CardImg
+                    alt="a space you need to experience"
+                    src={apartment.image}
+                    top
+                    width="100%"
+                  />
+                  
+                  <CardBody>
+                    <CardTitle tag="h5">
+                      Located in {apartment.state}
+                    </CardTitle>
+                    
+                    <Button>
+                      More Details
+                    </Button>
+                  </CardBody>
+                
+                </Card>
+              <CardGroup>
+            </>
+          )
 
-### `yarn test`
+        })}
+      </main>
+    )
+  }
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+export default ApartmentIndex
 
-### `yarn build`
+### Show
+ - modify path to have a param
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+const { id } = useParams()
+let currentApt = apartments?.find((apt) => apt.id === +id)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+return (
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  <main>
+    {currentApt && (
 
-### `yarn eject`
+      <>
+        <Card>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+          <CardImg
+            alt="a space you need to experience"
+            src={currentApt.image}
+            top
+            width="100%"
+          />
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+          <CardBody>
+            <CardTitle tag="h5">
+              Located in {currentApt.state}
+            </CardTitle>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+            <CardSubtitle
+              className="mb-2 text-muted"
+              tag="h6"
+            >
+              {currentApt.street} {currentApt.unit},{currentApt.city}, {currentApt.state}
+            </CardSubtitle>
+            
+            <CardText>
+              {currentApt.square_footage} that includes {currentApt.bedrooms} bedrooms and {currentApt.bathrooms} bathrooms going for {currentApt.price}
+            </CardText>
+          </CardBody>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+        </Card>
+      </>
 
-## Learn More
+    )}
+  </main>
+)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### New
+ - https://github.com/learn-academy-2023-charlie/syllabus/blob/main/cat-tinder/frontend/cat-create.md
+ - on App.js, create function
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+const createCat = (apt) => {
+  console.log("created apartment:", apt)
+}
 
-### Code Splitting
+ - setup functional prop on ApartmentNew.js
+const ApartmentNew = ({ createCat }) => {
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+  const [newApt, setNewApt] = useState({
+    street: "",
+    unit: "",
+    city: "",
+    state: "",
+    square_footage: "",
+    price: "",
+    bedrooms: "",
+    bathrooms: "",
+    pets: "",
+    image: "",
+    user_id: ""
+  })
 
-### Analyzing the Bundle Size
+  const handleChange = (e) => {
+    setNewApt({ ...newApt, [e.target.name]: e.target.value })
+  }
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+  const handleSubmit = () => {
+    createApt(newApt)
+  }
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### ApartmentProtectedIndex
+ - need to set a condition that a user can see all the apartments associated with that user's id
 
-### Advanced Configuration
+ - ApartmentProtectedIndex.js
+  - use the filter method to create a new array of apartments belonging to the user by comparing if the primary key of the user is strictly equal to the foreign key of the apartment.
+  
+  const myApartments = apartments?.filter(apartment => currentUser?.id === apartment.user_id)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+ - will use later on edit page
 
-### Deployment
+const [currentApt, setCurrentApt] = useState(
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+    {
+      street: currentApt.street,
+      unit: currentApt.unit,
+      city: currentApt.city,
+      state: currentApt.state,
+      square_footage: currentApt.square_footage,
+      price: currentApt.price,
+      bedrooms: currentApt.bedrooms,
+      bathrooms: currentApt.bathrooms,
+      pets: currentApt.pets,
+      image: currentApt.image,
+      user_id: currentUser.id
+    }
 
-### `yarn build` fails to minify
+  )
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Protected Pages
+ - https://github.com/learn-academy-2023-charlie/syllabus/blob/main/apartment-app/frontend/protected.md
+
+### Header
+ - links will be on the Header.js
+ - conditional rendering: under a true condition, certain links will be available
+
+   - {currentUser && ()}
+
+  - pass user prop to Header.js
+   - non-users will see: ApartmentIndex, LogIn, SignUp
+   - users: ApartmentIndex, ApartmentProtectedIndex, LogOut
+
+ - Header.js
+
+  <Nav className="nav">
+
+    {currentUser && (
+
+      <NavItem>
+        <input type="button" value='Logout' />
+      </NavItem>
+
+    )}
+
+    {!currentUser && (
+
+      <>
+        <NavItem>
+
+          <NavLink to="/login" className="nav-link">
+            Log In
+          </NavLink>
+
+        </NavItem>
+
+        <NavItem>
+
+          <NavLink to="/signup" className="nav-link">
+            Sign Up
+          </NavLink>
+          
+        </NavItem>
+      </>
+
+    )}
+  </Nav>
+
+  NotFoundTest
+  // Here are the accessible roles:
+
+//       heading:
+
+//       Name "Uh oh!":
+//       <h1 />
+
+//       Name "No dogs or hotels here!":
+//       <h3 />
+
+//       --------------------------------------------------
+//       paragraph:
+
+//       Name "":
+//       <p
+//         class="card-text"
+//       />
+
+//       --------------------------------------------------
+//       presentation:
+
+//       Name "Image of sleeping dog on 404 content not found page":
+//       <img
+//         alt="Image of sleeping dog on 404 content not found page"
+//         class="card-img"
+//         src="lostDog.png"
+//       />
+
+//       --------------------------------------------------
+//       link:
+
+//       Name "Let's go home!":
+//       <a
+//         class="btn btn-info text-dark"
+//         href="/"
+//         style="width: 50%;"
+//       />
+
+
