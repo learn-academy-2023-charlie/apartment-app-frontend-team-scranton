@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 import {
-  Navbar,
-  NavItem,
-  NavbarToggler,
-  Collapse,
-  NavLink,
-  Nav,
-  NavbarBrand,
+    Navbar,
+    NavItem,
+    NavbarToggler,
+    Collapse,
+    NavLink,
+    Nav,
+    NavbarBrand,
 } from 'reactstrap';
 
 function Header() {
-  const [isOpen, setIsOpen] = React.useState(false);
+    const [isOpen, setIsOpen] = React.useState(false);
 
   return (
-<div style={{
+        <div style={{
             display: 'block', width: "100vw"
         }}>
             <Navbar expand="md"  className="mb-5 navbar bg-info sticky-top">
