@@ -1,3 +1,5 @@
+https://github.com/learn-academy-2023-charlie/apartment-app-frontend-team-splendiferous-instructors
+
 Apartment Index
  - https://github.com/learn-academy-2023-charlie/syllabus/blob/main/cat-tinder/frontend/cat-read.md
 
