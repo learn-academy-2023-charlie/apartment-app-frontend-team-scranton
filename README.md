@@ -1,7 +1,3 @@
-Adjusted formatting in Footer.js, App.css
-Adjusted Header, Footer styling
-Added favicon.ico
-
 Apartment Index
  - https://github.com/learn-academy-2023-charlie/syllabus/blob/main/cat-tinder/frontend/cat-read.md
 
