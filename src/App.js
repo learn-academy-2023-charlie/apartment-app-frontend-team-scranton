@@ -14,6 +14,7 @@ import Home from "./pages/Home"
 import NotFound from "./pages/NotFound"
 import SignIn from "./pages/SignIn"
 import SignUp from "./pages/SignUp"
+import background from "./assets/bg_1.webp"
 
 const App = () => {
     const [currentUser, setCurrentUser] = useState(mockUsers[0])
@@ -21,6 +22,7 @@ const App = () => {
 
     return (
         <>
+        <div style={{ backgroundImage: `url(${background})`, height: "100vh" }}>
             <Header />
             <Routes>
                 <Route path="/" element={<Home />} />
@@ -33,6 +35,7 @@ const App = () => {
                 <Route path="*" element={<NotFound />} />
             </Routes>
             <Footer />
+        </div>
         </>
     )
 }
