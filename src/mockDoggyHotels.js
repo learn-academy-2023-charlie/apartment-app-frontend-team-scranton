@@ -1,5 +1,6 @@
 let mockDoggyHotels = [
     {
+        name: "Pug Life",
         id: 1,
         user_id: 1,
         dog_size_grouping: "small",
@@ -13,6 +14,7 @@ let mockDoggyHotels = [
     },
    
     {
+        name: "Barks and Recreation",
         id: 2,
         user_id: 1,
         dog_size_grouping: "medium",
@@ -26,6 +28,7 @@ let mockDoggyHotels = [
     },
   
     {
+        name: "Barking Bad",
         id: 3,
         user_id: 2,
         dog_size_grouping: "large",
@@ -39,6 +42,7 @@ let mockDoggyHotels = [
     },
    
     {
+        name: "Barkingham Palace",
         id: 4,
         user_id: 3,
         dog_size_grouping: "any",
