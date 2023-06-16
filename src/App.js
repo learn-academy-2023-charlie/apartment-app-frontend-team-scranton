@@ -19,6 +19,9 @@ import background from "./assets/bg_1.webp"
 const App = () => {
     const [currentUser, setCurrentUser] = useState(mockUsers[0])
     const [doggyHotels, setDoggyHotels] = useState(mockDoggyHotels)
+    const createDH = (dh) => {
+        console.log("created doggy hotel:", dh);
+    }
 
     return (
         <>
@@ -30,7 +33,7 @@ const App = () => {
                 <Route path="/signin" element={<SignIn />} />
                 <Route path="/doggyhotelindex" element={<DoggyHotelIndex doggyHotels={doggyHotels}/>} />
                 <Route path="/doggyhotelshow/:id" element={<DoggyHotelShow doggyHotels={doggyHotels}/>} />
-                <Route path="/doggyhotelnew" element={<DoggyHotelNew />} />
+                <Route path="/doggyhotelnew" element={<DoggyHotelNew createDH={createDH} currentUser={currentUser}/>} />
                 <Route path="/doggyhoteledit" element={<DoggyHotelEdit />} />
                 <Route path="*" element={<NotFound />} />
             </Routes>

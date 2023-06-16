@@ -30,7 +30,7 @@ const DoggyHotelShow = ({doggyHotels}) => {
                 {currentDH.city}, {currentDH.state}, ${currentDH.price} per day
               </CardSubtitle>
               <CardText>
-                {currentDH.name} has {currentDH.kennel} kennel(s) each measuring {currentDH.square_footage} square feet.<br /> This Doggy Hotel boards {currentDH.dog_size_grouping}-sized dogs and guarantees at least {currentDH.number_of_walks} walks per day.
+                {currentDH.name} has {currentDH.kennel} kennel(s) each measuring {currentDH.square_footage} square feet.<br /> This Doggy Hotel boards {currentDH.dog_size_grouping}-sized dogs and guarantees at least {currentDH.number_of_walks} walk(s) per day.
               </CardText>
             </CardBody>
           </Card>
