@@ -6,7 +6,7 @@ const DoggyHotelIndex = ({doggyHotels}) => {
 
     return(
         <>
-            <CardGroup>
+            <CardGroup className="mx-auto my-auto text-center" style={{width:"90vw"}}>
                 {doggyHotels?.map((dh, index) => {
 
                     return(

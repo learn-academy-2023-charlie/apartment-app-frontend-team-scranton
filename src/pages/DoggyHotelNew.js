@@ -28,7 +28,7 @@ const DoggyHotelNew = ({ createDH, currentUser }) => {
             <Row>
                 <Col col-auto className='ps-5 pt-3'>
                     <FormGroup>
-                        <Label for="dh-name" class="form-label">
+                        <Label for="dh-name" className="form-label">
                             Name:
                         </Label>
                         <Input
@@ -44,7 +44,7 @@ const DoggyHotelNew = ({ createDH, currentUser }) => {
 
                 <Col col-auto className='pt-3'>
                     <FormGroup>
-                        <Label for="dh-size-group" class="form-label">
+                        <Label for="dh-size-group" className="form-label">
                             Dog size group (e.g. small, medium...):
                         </Label>
                         <Input
@@ -60,7 +60,7 @@ const DoggyHotelNew = ({ createDH, currentUser }) => {
 
                 <Col col-auto className='pe-5 pt-3'>
                     <FormGroup>
-                        <Label for="dh-kennel" class="form-label">
+                        <Label for="dh-kennel" className="form-label">
                             Number of kennels:
                         </Label>
                         <Input
@@ -78,7 +78,7 @@ const DoggyHotelNew = ({ createDH, currentUser }) => {
             <Row>
                 <Col col-auto className='ps-5'>
                     <FormGroup>
-                        <Label for="dh-city" class="form-label">
+                        <Label for="dh-city" className="form-label">
                             City:
                         </Label>
                         <Input
@@ -94,7 +94,7 @@ const DoggyHotelNew = ({ createDH, currentUser }) => {
 
                 <Col col-auto>
                     <FormGroup>
-                        <Label for="dh-state" class="form-label">
+                        <Label for="dh-state" className="form-label">
                             State:
                         </Label>
                         <Input
@@ -110,7 +110,7 @@ const DoggyHotelNew = ({ createDH, currentUser }) => {
 
                 <Col col-auto className='pe-5'>
                     <FormGroup>
-                        <Label for="dh-square_footage" class="form-label">
+                        <Label for="dh-square_footage" className="form-label">
                             Square footage of each kennel:
                         </Label>
                         <Input
@@ -128,7 +128,7 @@ const DoggyHotelNew = ({ createDH, currentUser }) => {
             <Row>
                 <Col col-auto className='ps-5'>
                     <FormGroup>
-                        <Label for="dh-price" class="form-label">
+                        <Label for="dh-price" className="form-label">
                             Price per dog per day:
                         </Label>
                         <Input
@@ -144,7 +144,7 @@ const DoggyHotelNew = ({ createDH, currentUser }) => {
 
                 <Col col-auto>
                     <FormGroup>
-                        <Label for="dh-number_of_walks" class="form-label">
+                        <Label for="dh-number_of_walks" className="form-label">
                             Number of walks per dog per day:
                         </Label>
                         <Input
@@ -160,7 +160,7 @@ const DoggyHotelNew = ({ createDH, currentUser }) => {
 
                 <Col col-auto className='pe-5'>
                     <FormGroup>
-                        <Label for="dh-image" class="form-label">
+                        <Label for="dh-image" className="form-label">
                             Image
                         </Label>
                         <Input
@@ -182,7 +182,7 @@ const DoggyHotelNew = ({ createDH, currentUser }) => {
                         onClick={handleClick}
                         href="/doggyhotelindex"
                         type="submit"
-                        class="button"
+                        className="button"
                         >
                         Join the bark side!
                     </Button>
