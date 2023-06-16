@@ -247,4 +247,11 @@ const [currentApt, setCurrentApt] = useState(
 //         style="width: 50%;"
 //       />
 
+Show Testing Page 
+<MemoryRouter initialEntries={["/doggyhotelshow/1"]}>
+  <Routes>
+    <Route path="doggyhotelshow/" element={<DoggyHotelShow doggyHotels={mockDoggyHotels} />}>
+    </Route>
+  </Routes>
+</MemoryRouter>
 
