@@ -24,7 +24,6 @@ describe("<DoggyHotelShow />", () => {
                 </Routes>
             </MemoryRouter>    
         )        
-        screen.debug()
             expect(screen.getByText(/kennel\(s\) each measuring/i)).toBeInTheDocument()
     })
 })
