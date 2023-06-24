@@ -20,7 +20,8 @@ Doggy Hotels was largely created as a process of learning.
   $ git clone https://github.com/learn-academy-2023-charlie/apartment-app-frontend-team-scranton.git
   $ cd apartment-app-frontend-team-scranton
   $ yarn start
-  $ cd ..
+
+  -New terminal window
   $ git clone https://github.com/learn-academy-2023-charlie/apartment-app-backend-team-scranton.git
   $ cd apartment-app-backend-team-scranton
   $ rails s
