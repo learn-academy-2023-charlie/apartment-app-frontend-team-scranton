@@ -4,7 +4,7 @@
 
 Jessica Ricks, Ernesto Gonzalez, and Sarah Cherry created 'Doggy Hotels' as team Scranton during LEARN Academy's 4 month full stack software development bootcamp. The stack used for this is Ruby on Rails, RSpec testing, and React with JSX, using ActiveRecord for database management. This was our second independent full stack app, and has full CRUD functionality. 
 
-This repo contains the frontend - UI with JS unit testing. Find the backend repo [here](https://github.com/learn-academy-2023-charlie/apartment-app-backend-team-scranton/edit/main/README.md)
+This repo contains the frontend - UI with JS unit testing. Find the backend repo [here](https://github.com/learn-academy-2023-charlie/apartment-app-backend-team-scranton/blob/main/README.md)
 
 ## Motivation
 Doggy Hotels was largely created as a process of learning.
